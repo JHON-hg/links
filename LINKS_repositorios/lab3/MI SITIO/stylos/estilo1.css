@@ -1,0 +1,12 @@
+body{font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
+}
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: azure;
+    font-size: 48px; /* Cambia este valor al tamaño que desees */
+}
+p{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: black;
+}

@@ -1,0 +1,14 @@
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid black; /* Marco para el título */
+    padding: 10px;           /* Espacio interno dentro del marco */
+}
+
+p {
+    border: 5px solid  black; /* Marco para el párrafo */
+    padding: 10px;
+}
