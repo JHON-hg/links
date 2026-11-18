@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panadería Santa Rosa | Realiza tu Pedido</title>
+  
+  <!-- Estilos de Bootstrap 5.3.8 y Marca -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/marca.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-cafe">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index-bootstrap.html">Panadería Santa Rosa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="portada.html">Regresar a pagina principal</a></li>
+          <li class="nav-item"><a class="nav-link" href="index-bootstrap.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="index-bootstrap.html#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="pedidos.html">Pedidos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulario Principal -->
+  <main class="container py-4">
+    <h1 class="mb-2 fs-2">Haz tu pedido</h1>
+    <p class="text-body-secondary mb-4">Te confirmaremos por WhatsApp en menos de una hora.</p>
+
+    <form novalidate>
+      <div class="row g-4">
+        
+        <!-- Tus datos -->
+        <div class="col-12 col-md-6">
+          <fieldset class="border p-3 rounded bg-white h-100">
+            <legend class="float-none w-auto px-2 fs-6 fw-bold text-cafe">Tus datos</legend>
+            
+            <div class="mb-3">
+              <label for="nombre" class="form-label fw-bold">Nombre</label>
+              <input type="text" id="nombre" name="nombre" class="form-control">
+              <p id="error-nombre" class="error"></p>
+            </div>
+
+            <div class="mb-3">
+              <label for="celular" class="form-label fw-bold">Celular</label>
+              <input type="tel" id="celular" name="celular" class="form-control">
+              <p id="error-celular" class="error"></p>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Tu pedido -->
+        <div class="col-12 col-md-6">
+          <fieldset class="border p-3 rounded bg-white h-100">
+            <legend class="float-none w-auto px-2 fs-6 fw-bold text-cafe">Tu pedido</legend>
+
+            <div class="mb-3">
+              <label for="producto" class="form-label fw-bold">Producto</label>
+              <select id="producto" name="producto" class="form-select">
+                <option value="">Elige un producto</option>
+                <option value="Pan de yema">Pan de yema</option>
+                <option value="Pan francés">Pan francés</option>
+                <option value="Chancay">Chancay</option>
+                <option value="Torta de chocolate">Torta de chocolate</option>
+              </select>
+              <p id="error-producto" class="error"></p>
+            </div>
+
+            <div class="mb-3">
+              <label for="cantidad" class="form-label fw-bold">Cantidad</label>
+              <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="100" class="form-control">
+              <p id="error-cantidad" class="error"></p>
+            </div>
+
+            <div class="mb-3">
+              <label for="fecha" class="form-label fw-bold">Fecha de recojo</label>
+              <input type="date" id="fecha" name="fecha" class="form-control">
+              <p id="error-fecha" class="error"></p>
+            </div>
+
+            <div class="mb-3">
+              <label for="indicaciones" class="form-label fw-bold">Indicaciones (opcional)</label>
+              <textarea id="indicaciones" name="indicaciones" rows="3" class="form-control"></textarea>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+
+      <!-- Autorización de datos -->
+      <div class="form-check my-3">
+        <input type="checkbox" id="consentimiento" name="consentimiento" class="form-check-input">
+        <label for="consentimiento" class="form-check-label fw-semibold">
+          Autorizo que usen mis datos solo para atender este pedido.
+        </label>
+        <p id="error-consentimiento" class="error"></p>
+      </div>
+
+      <!-- Estado de confirmación y Botón -->
+      <div id="estado" class="mb-3" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn btn-marca btn-lg w-100">Enviar pedido</button>
+    </form>
+  </main>
+
+  <!-- Pie de página en 3 columnas (Reto) -->
+  <footer id="contacto" class="bg-cafe text-white py-4 mt-5">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <h2 class="h5">Nuestras Tiendas</h2>
+          <p class="mb-1"><strong>Tienda 1:</strong> Av. Los Panaderos 123, Ate</p>
+          <p class="mb-0"><strong>Tienda 2:</strong> Av. Central 456, Ate</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h5">Horario de Atención</h2>
+          <p class="mb-1">Lunes a sábado: 6:00 a 21:00</p>
+          <p class="mb-0">Domingos: 6:00 a 13:00</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h2 class="h5">Contacto Directo</h2>
+          <p class="mb-1">Celular / WhatsApp: 900 000 000</p>
+          <p class="mb-0">Correo: contacto@panaderiasantarosa.pe</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
